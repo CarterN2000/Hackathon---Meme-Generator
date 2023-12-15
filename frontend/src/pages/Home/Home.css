@@ -1,0 +1,16 @@
+.memeTemp {
+    height: 25vh;
+    width: 20vh;
+}
+
+.meme-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5vh;
+}
+
+.single-meme-container {
+    border: 2px solid black;
+    width: 20vh;
+    height: 30vh;
+}

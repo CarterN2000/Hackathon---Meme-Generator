@@ -6,6 +6,7 @@ function Nav() {
         <nav className="navBar">
             <div className="title">Ackeems Memes</div>
             <Link className="Links" to="/">Home</Link>
+            <Link className="Links" to="/memes">Community Creations</Link>
             <Link className="Links" to="/favorites">Favorite Memes</Link>
         </nav>
     )
