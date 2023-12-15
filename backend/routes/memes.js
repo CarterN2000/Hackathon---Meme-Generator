@@ -1,26 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next)=>{
-    res.status(200).json({message: 'Index Route'});
-});
+const memeCtrl = require('../controllers/memes');
 
-router.post("/", (req, res) =>  {
-	console.log(req.body)
-	res.status(200).json({message: "people create route"})
-});
+router.get('/', memeCtrl.index);
 
-router.get("/:id", (req, res) => {
-	res.status(200).json({message: "people show route: " + req.params.id })
-});
+router.post("/", memeCtrl.create);
 
-router.delete("/:id", (req, res) => {
-	res.status(200).json({message: "people delete route: " + req.params.id })
-});
+router.get("/:id", memeCtrl.show);
 
-router.put("/:id", (req, res) => {
-	console.log(req.body)
-	res.status(200).json({message: "people update route: " + req.params.id })
-});
+router.delete("/:id", memeCtrl.delete);
+
+router.put("/:id", memeCtrl.update);
 
 module.exports = router;
