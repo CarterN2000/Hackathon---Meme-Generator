@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { getMemeTemplates } from '../../utilities/meme-service'
+import { Link } from 'react-router-dom'
 import './Home.css'
+import Create from '../Create'
 
 export default function Home() {
     const [memes, setMemes] = useState([])
@@ -21,8 +23,8 @@ export default function Home() {
             {memes?.map(function(meme, idx) {
                 return(
                     <div key={idx} className="single-meme-container">
-                        <div><img className="memeTemp" src={meme.blank} alt="Error" /></div>
-                        <button>Use This Template</button>
+                        <div><img className="meme-temp" src={meme.blank} alt="Error" /></div>
+                        <button className="use-temp"><Link to={{ pathname: '/create', state: { img: meme.blank }}}>Use Template</Link></button>
                     </div>
                 )
             })}
@@ -37,6 +39,8 @@ export default function Home() {
     },[])
 
     return (
-      isLoading ? <h1>Loading...</h1> : renderMemes() 
+        <>
+      {isLoading ? <h1>Loading...</h1> : renderMemes() }
+      </>
     )
 }
