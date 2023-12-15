@@ -1,4 +1,5 @@
 import config from '../config'
+import * as memeAPI from './meme-api'
 
 let imageLink = 'https://api.memegen.link/images'
 
@@ -15,4 +16,42 @@ export async function getTemplate(id) {
     if (res.ok) {
         return res.json
     }
+}
+
+export async function addToDB(data){
+    try{
+        const newMeme = await memeAPI.createDB(data)
+        return newMeme;
+      }catch(err){
+      console.log(err)
+      return err;
+      }
+}
+
+export async function getCommunityMemes(){
+    try {
+        const data = await memeAPI.index();
+        return data;
+      } catch (err) {
+        console.log(err);
+        return err;
+      }
+}
+
+export async function deleteMeme(id){
+    try{
+        const meme = await memeAPI.destroy(id);
+        return meme;
+      }catch(err){
+        return err;
+      }
+}
+
+export async function showMeme(id){
+    try{
+        const meme = await memeAPI.show(id);
+        return meme;
+      }catch(err){
+        return err;
+      }
 }
