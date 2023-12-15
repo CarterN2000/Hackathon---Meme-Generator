@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const MemeSchema = new Schema ({
-    image: {type: String},
-    title: {type: String},
-    favs: [String]
+const MemeSchema = new Schema({
+    image: String
 },{
     timestamps: true
 });

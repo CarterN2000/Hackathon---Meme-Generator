@@ -1,4 +1,4 @@
-const Meme = require('../models/meme');
+const {Meme} = require('../models');
 
 module.exports = {
     index,
@@ -18,8 +18,7 @@ async function index(req, res, next){
 
 async function create(req, res, next){
     try{
-        console.log(req.body)
-        res.status(201).json(await Meme.create(req.body));
+        res.status(200).json(await Meme.create(req.body));
     }catch(err){
         res.status(400).json({err: err.message})
     }
