@@ -1,13 +1,14 @@
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { createMeme } from '../../utilities/meme-service'
+import { addToDB } from '../../utilities/meme-service'
 import { useNavigate } from 'react-router'
 import './Create.css'
 
 export default function Create() {
 
     const location = useLocation()
-    const memeTemp = location.state 
+    const memeTemp = location.state
+    const id = memeTemp.id
 
     const [topText, setTopText] = useState('')
     const [bottomText, setBottomText] = useState('')
@@ -24,12 +25,11 @@ export default function Create() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        console.log(topText, bottomText, "current data")
         try {
-            const newMeme = await createMeme(topText, bottomText)
+            await addToDB(topText, bottomText, id)
             navigate('/memes')
         }
-        catch(err) {
+        catch (err) {
             console.log(err)
         }
         setTopText('')
@@ -38,17 +38,17 @@ export default function Create() {
 
     return (
         <>
-        <section className='content-container'>
-        <h1>Create Meme</h1>
-        <div className="create-container">
-            <img className='temp-image' src={memeTemp.img} alt="Meme" />
-            <form className="create-meme-form">
-                <input type="text" name="top-text"  placeholder="TOP-TEXT" onChange={handleTopChange} required/>
-                <input type="text" name="bottom-text" placeholder="BOTTTOM-TEXT" onChange={handleBottomChange} required/>
-                <button type="submit" onSubmit={handleSubmit}>CREATE MEME</button>
-            </form>
-        </div>
-        </section>
+            <section className='content-container'>
+                <h1>Create Meme</h1>
+                <div className="create-container">
+                    <img className='temp-image' src={memeTemp.img} alt="Meme" />
+                    <form className="create-meme-form" onSubmit={handleSubmit}>
+                        <input type="text" name="top-text" placeholder="TOP-TEXT" onChange={handleTopChange} required />
+                        <input type="text" name="bottom-text" placeholder="BOTTTOM-TEXT" onChange={handleBottomChange} required />
+                        <button type="submit">CREATE MEME</button>
+                    </form>
+                </div>
+            </section>
         </>
     )
 }

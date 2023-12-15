@@ -1,0 +1,20 @@
+.memey-container {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 2rem;
+    border: 4px solid black
+}
+
+.all-memes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5vh;
+    margin-left: 3vh;
+}
+
+.meme {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 1.5rem;
+    border-bottom: 3px solid black;
+}

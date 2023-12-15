@@ -1,7 +1,7 @@
 .create-container {
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: auto;
     width: 35vh;
     border-radius: 1rem;
     border: 3px solid black;
@@ -33,6 +33,8 @@
 }
 
 .temp-image {
+    height: 35vh;
+    width: 35vh;
     border-top-right-radius: .75rem;
     border-top-left-radius: .75rem;
     border-bottom: 3px solid black;

@@ -24,7 +24,7 @@ export default function Home() {
                 return(
                     <div key={idx} className="single-meme-container">
                         <div><img className="meme-temp" src={meme.blank} alt="Error" /></div>
-                        <button className="use-temp"><Link to="/create" state={{img: meme.blank}}>Use Template</Link></button>
+                        <button className="use-temp"><Link to="/create" state={{img: meme.blank, id: meme.id}}>Use Template</Link></button>
                     </div>
                 )
             })}

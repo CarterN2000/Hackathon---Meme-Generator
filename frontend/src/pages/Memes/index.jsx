@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCommunityMemes } from '../../utilities/meme-service'
 import { Link } from 'react-router-dom'
+import './Memes.css'
 
 
 export default function Memes() {
@@ -17,14 +18,19 @@ export default function Memes() {
     function renderMemes() {
         
         return (
-            <div>
+            <>
             <h2>Community Creations</h2>
+            <div className="all-memes">
             {memes.map((meme, idx)=>{
-                    <img key={idx} src={meme.blank} alt="err" />
-                
+                return(
+                    <div className='memey-container'>
+                    <img className="meme" key={idx} src={meme.blank} alt="err" />
+                    </div>
+                )
             })}
                 
             </div>
+            </>
         )
     }
 

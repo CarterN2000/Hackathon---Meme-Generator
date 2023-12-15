@@ -18,11 +18,13 @@ export async function getTemplate(id) {
     }
 }
 
-export async function addToDB(data){
+export async function addToDB(topText, bottomText, id){
     try{
-        const newMeme = await memeAPI.createDB(data)
-        return newMeme;
-      }catch(err){
+        const data = {blank:`https://api.memegen.link/images/${id}/${topText}/${bottomText}`}
+        console.log(data)
+        await memeAPI.createDB(data)
+      }
+      catch(err){
       console.log(err)
       return err;
       }
