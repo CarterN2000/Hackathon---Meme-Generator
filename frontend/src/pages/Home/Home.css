@@ -1,0 +1,43 @@
+.meme-temp {
+    height: 25vh;
+    width: 20vh;
+    border-top-left-radius: .75rem;
+    border-top-right-radius: .75rem;
+    border-bottom: 2px solid black;
+}
+
+.meme-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5vh;
+    margin-left: 3vh;
+}
+
+.single-meme-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 20vh;
+    height: 30vh;
+    border-radius: 1rem;
+    align-items: center;
+    background-color: rgb(195, 181, 255);
+}
+
+.use-temp {
+    font-weight: bold;
+    background-color: white;
+    align-self: center;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+
+.use-temp:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+.use-temp > a {
+    text-decoration: none;
+    color: black;
+}

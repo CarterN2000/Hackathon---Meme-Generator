@@ -1,0 +1,32 @@
+.navBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: .5rem 1.25rem;
+    border: 3px solid black;
+    background-color: rgb(167, 170, 173);
+    border-radius: 2rem;
+    width: auto;
+    height: 5vh;
+  }
+
+.Links {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgb(151, 245, 176);
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(96, 246, 136);
+    margin-right: auto;
+}
