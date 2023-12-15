@@ -10,6 +10,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 5vh;
+    margin-left: 3vh;
 }
 
 .single-meme-container {
@@ -25,8 +26,15 @@
 
 .use-temp {
     font-weight: bold;
-    background-color: antiquewhite;
+    background-color: white;
     align-self: center;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+
+.use-temp:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
 }
 
 .use-temp > a {
