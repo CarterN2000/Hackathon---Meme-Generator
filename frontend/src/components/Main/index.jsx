@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../../pages/Home/";
 import Show from "../../pages/Show/";
 import Favorites from "../../pages/Favorites/"
+import Memes from "../../pages/Memes/"
 
 const Main = () => {
   return (
@@ -10,6 +11,8 @@ const Main = () => {
         <Route path="/" element={<Home />}/>
         <Route path="/:id" element={<Show />} />
         <Route path="/favorites" element={<Favorites />}/>
+        <Route path="/memes" element={<Memes />}/>
+
       </Routes>
     </main>
   );
