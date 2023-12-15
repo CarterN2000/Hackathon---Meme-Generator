@@ -15,12 +15,12 @@ app.get('/', (req, res)=> {
     res.send("Hello world");
 });
 
-app.use('/memes', memeRouter);
-
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 app.use(cors());
 app.use(morgan("dev"));
+
+app.use('/memes', memeRouter);
 
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

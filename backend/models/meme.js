@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const memeSchema = new Schema ({
-    image: String,
-    title: String,
-    favorites: [{type: Schema.Types.ObjectId, ref: "Meme"}]
+const MemeSchema = new Schema ({
+    image: {type: String},
+    title: {type: String},
+    favs: [String]
 },{
     timestamps: true
-})
+});
 
-module.exports = mongoose.model('Meme', memeSchema);
+module.exports = mongoose.model('Meme', MemeSchema);
