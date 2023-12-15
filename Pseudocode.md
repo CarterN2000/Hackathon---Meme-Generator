@@ -10,7 +10,7 @@
 
 # Frontend needs
  - Main page to search for the meme images, list of imagees will appear, previously created memes will be stored below the search bar
- - "show" page - shows individual meme selected by user
+ - "show" page - shows individual meme selected by user, includes "favoirte" and "edit" button
  - "edit" page - append text to each image
  - "myFavorites" page - stores a list of memes
  - "Header" - nav bar - "Explore/Home" "Favorites"
@@ -22,3 +22,4 @@
   - mongoose model of a meme
     - image
     - text
+    - array[ids of favorited memes]
