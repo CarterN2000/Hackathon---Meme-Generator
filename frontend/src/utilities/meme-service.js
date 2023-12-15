@@ -16,3 +16,7 @@ export async function getTemplate(id) {
         return res.json
     }
 }
+
+export async function createMeme(topText, bottomText) {
+
+}

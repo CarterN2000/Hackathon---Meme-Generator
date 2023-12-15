@@ -1,0 +1,46 @@
+.create-container {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 35vh;
+    border-radius: 1rem;
+    border: 3px solid black;
+    background-color: rgb(195, 181, 255);
+
+}
+
+.create-meme-form {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-meme-form > input {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    border: 1px solid black;
+}
+.create-meme-form > button {
+    height: 4vh;
+    font-size: 20px;
+    border-radius: 1rem;
+    border: 2px solid black;
+}
+
+.create-meme-form > button:hover {
+    background-color: blanchedalmond;
+    cursor: pointer;
+}
+
+.temp-image {
+    border-top-right-radius: .75rem;
+    border-top-left-radius: .75rem;
+    border-bottom: 3px solid black;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
